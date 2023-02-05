@@ -8,7 +8,7 @@ export const Content = styled.div`
   background: var(--form-background);
   border-radius: 5px;
 
-  @media (max-width: 390px) {
+  @media (max-width: 532px) {
     background: none;
     margin-top: 3rem;
     padding: 1rem;
