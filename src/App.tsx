@@ -1,27 +1,23 @@
-import { AppContent, Container, SideFirst, SideSecond, SideContent } from "./AppStyled"
-import  Logo  from "./assets/logo.svg"
-import { FormContainer } from "./components/Form"
+import 'react-toastify/dist/ReactToastify.css';
+import { Router } from "./Router"
+import { ToastContainer } from "react-toastify"
+import { BrowserRouter } from 'react-router-dom'
+import { AuthProvider } from "./context/authContext"
 
 export function App() {
-  
   return (
-    <>
-      <Container>
-        <SideFirst>
-          <header>
-            <img className="Logo" src={Logo} alt="" />
-          </header>
 
-          <SideContent>
-            <FormContainer/>
-          </SideContent>
-        </SideFirst>
-        <SideSecond></SideSecond>
-      </Container>
-      <AppContent/>
-    </>
-  
-    
+    <BrowserRouter>
+      <AuthProvider>
+        <Router/>
+        <ToastContainer 
+          position="top-right"
+          autoClose={5000}
+          closeOnClick
+          pauseOnHover
+        />
+      </AuthProvider>
+    </BrowserRouter>  
   )
 }
 
